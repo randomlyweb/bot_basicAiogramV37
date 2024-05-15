@@ -1,0 +1,8 @@
+TOKEN = '7101007523:AAEsAorWqpc4XqN47CQl0359HL5pUyuFBTg'
+ADMIN_IDS = [6908365114]
+
+# DB
+HOST = 'localhost'
+DB_NAME = 'postgres'
+USER = 'postgres'
+PASSWORD = '01052008MEme++--'
