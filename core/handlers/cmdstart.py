@@ -16,5 +16,6 @@ async def say_hello(message: Message):
 
 @router.callback_query(F.data == 'start')
 async def say_hello_callback(call: CallbackQuery):
+    await call.message.delete()
     await add_user(call.from_user.id)
     await call.message.answer('Hello!')
