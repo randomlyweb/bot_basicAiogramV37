@@ -1,5 +1,5 @@
 TOKEN = ''
-ADMIN_IDS = [6908365114]
+ADMIN_IDS = []
 
 # DB
 HOST = 'localhost'
