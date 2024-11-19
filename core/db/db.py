@@ -1,6 +1,13 @@
+import os
+from dotenv import load_dotenv
 import asyncpg
 
-from config import HOST, DB_NAME, USER, PASSWORD
+load_dotenv()
+
+USER = os.getenv('USER')
+PASSWORD = os.getenv('PASSWORD')
+DB_NAME = os.getenv('DB_NAME')
+HOST = os.getenv('HOST')
 
 
 async def init_db():

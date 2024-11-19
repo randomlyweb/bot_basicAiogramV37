@@ -1,23 +1,25 @@
+import os
 import sys
 import asyncio
 import logging
+from dotenv import load_dotenv
 
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
 
-from config import TOKEN
 from core.handlers import cmdstart
 from core.db.db import init_db
 
 dp = Dispatcher()
-
+load_dotenv()
 
 async def main() -> None:
     dp.include_routers(
         cmdstart.router,
     )
-    bot = Bot(TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+
+    bot = Bot(os.getenv('TOKEN'), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
